@@ -64,6 +64,10 @@ def list_usbdisks():
 
 if __name__ == "__main__":
 	udisks = list_usbdisks()
+	if udisks is None:
+		print "aborted"
+		exit()
+
 	for d in udisks: 
 #		print d
 		if is_bootdisk(d): 
